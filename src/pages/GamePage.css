@@ -1,0 +1,106 @@
+.game-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 10px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.game-topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  flex-shrink: 0;
+}
+
+.game-round-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  min-width: 180px;
+}
+
+.round-badge {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.drawer-tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--warning);
+  white-space: nowrap;
+}
+
+.guesser-tag {
+  font-size: 13px;
+  color: var(--text2);
+  white-space: nowrap;
+}
+
+.hint-display {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.timer { max-width: 200px; flex-shrink: 0; }
+
+.leave-btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.game-body {
+  display: grid;
+  grid-template-columns: 180px 1fr 260px;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+.canvas-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+  background: #ffffff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid var(--border);
+  min-height: 0;
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .game-body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .game-page { overflow: auto; }
+  .canvas-section { height: 50vw; min-height: 300px; }
+}
